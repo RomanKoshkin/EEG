@@ -322,6 +322,7 @@ end
 % uncomment if you want to save data for max_projection_fork1.m:
 % save('/Users/RomanKoshkin/Downloads/dataframe.mat', 'h')
 
+
 % save data for further analysis in R:
 if saveR == 1
     h = rmfield(h, 'fullEp');
