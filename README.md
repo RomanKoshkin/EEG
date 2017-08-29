@@ -1,11 +1,8 @@
-# EEG
-EEG/ERP data processing scripts for MATLAB
-
 ## Introduction
-The notebook "Principal Component Analysis.ipynb" introduces the theory, and intuition behind Principal Component Analysis (PCA) for the purpose of dimensionality reduction. It applies PCA to visualize a 8-dimensional data set onto 2D and 3D scatter plots. 
+The Matlab scripts contained in this repository were used to pre-process and analyze the EEG data acquired as part of an ERP study aimed to validate the Efforts Model of Simultaneous Interpreting (Gile, XXXX).The results of the study are presented in a paper that is currently in submission (review).
 
 ## Data
-The data used for the application of PCA can be found [here](https://www.kaggle.com/uciml/pima-indians-diabetes-database) on kaggle. This data contains the number of pregnancies, glucose level, blood pressure, skin thickness, insulin level, body mass index (BMI), age, and a diabetes pedigree (measure of the likelihood of getting diabities based on their ancestor's history) on several women over the age of 21 from Pima indian heritage. The data set contains labels on whether a women in the data tested positive for diabities. 
+The raw and pre-processed EEG and ERP data for all the participants can be found [here](https://cloud.mail.ru/public/ArTX/x4R4CfqpP). For more information about the dataset structure refer to our paper (Koshkin, Ossadtchi, Shtyrov 2017). 
 
 ## Dependencies
 * numpy
