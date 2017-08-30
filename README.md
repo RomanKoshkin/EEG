@@ -50,4 +50,4 @@ This script performs a randomization test of equal latencies in the windows of i
 All the above scripts ran trouble-free under EEGlab v13.5.4b. We cannot guarantee that it would work with other versions of EEGlab.
 
 GA_SUPER.m
-Proof-of-concept algorithm for rejecting “bad” epochs. ![Alt text](https://cloud.mail.ru/public/2TnF/n6DhtdCm4)
+Proof-of-concept algorithm for rejecting “bad” epochs. ![Alt text](https://cloud.mail.ru/public/3Lon/PVvjRVfY4)
