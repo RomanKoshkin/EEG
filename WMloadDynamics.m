@@ -1,4 +1,7 @@
-subjects = {'SHE', 'POG', 'BUL', 'KOS', 'ROM'};
+% This script computes how average WM load changes over time and
+% creates barplots
+
+subjects = {'KOS', 'GRU', 'ROM', 'SHE', 'ELT', 'POG', 'BUL', 'KOZ', 'KOK'};
 for i = 1:length(subjects)
 subject = subjects{i}
 % 1 - CW with RED
@@ -10,7 +13,7 @@ subject = subjects{i}
 % 9 - SYL (weighted)
 % 10 - CW without RED (weighted)
 
-estimate = 8; % 1, 4, 5 or 6 for unweighted CW, unweighted SYL, weighted CW and weighted SYL
+estimate = 7; % 1, 4, 5 or 6 for unweighted CW, unweighted SYL, weighted CW and weighted SYL
 path = ['/Users/RomanKoshkin/Documents/MATLAB/EEG/', subject, '_EEG/'];
 load([path 'TimeCodeEVSdata_' subject '.mat'])
 m = figure;
@@ -90,7 +93,7 @@ for i = 1:2
     ax = gca;
     ax.XTick = ([1:4]);
     ax.XTickLabel = find(ismember(s.TextLabels(:,2), a));
-    set(gca,'ylim',[1 4])
+    set(gca,'ylim',[1.15 1.45])
     title(['WM load dynamics by text ' a])
     xlabel('text number')
     grid on

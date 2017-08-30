@@ -1,5 +1,5 @@
 % This script performs a randomization test of equal latencies in the
-% windows of interest. The null hypothesis is that the latencies are the
+% windows of intrest. The null hypothesis is that the latencies are the
 % same
 
 clear
@@ -119,89 +119,81 @@ for kkk = 1:length(estimators)
 
     for LANG = 1:3
 
-        switch(LANG)
-            case 1
-            IDlow = REIDlow;
-            IDhigh = REIDhigh;
-            true_score = truHi_RE-truLo_RE;
-            case 2
-            IDlow = erIDlow;
-            IDhigh = erIDhigh;
-            true_score = truHi_er-truLo_er;
-            case 3
-            IDlow = allIDlow;
-            IDhigh = allIDhigh;
-            true_score = truHi_all-truLo_all;
-        end
-
-        All = [IDlow, IDhigh]; % create a pile of all trial numbers in the conditions;
-
-        lenA = length(IDhigh);
-        lenB = length(IDlow);
-        P_rand = zeros(1, perm);
-        clear perm_score ID_perm IDlow_perm low_perm high_perm permLo permHi
-        counter = counter + 1;
-        for j = 1:perm
-
-            % take a random sample out of the pile:
-            IDhigh_perm = randsample(All,lenA, 'false');
-            % IDlow_perm = randsample(All,lenB, 'false');
-            IDlow_perm  = All(~ismember(All, IDhigh_perm));
-
-            % average trials within the appropriate conditions:
-            low_perm = mean(cat(1, h(IDlow_perm).erp), 1);
-            high_perm = mean(cat(1, h(IDhigh_perm).erp), 1);
-
-            % get the difference wave for the resampled conditions: 
-            permLo = t(find(low_perm==min(low_perm(window))));
-            permHi = t(find(high_perm==min(high_perm(window))));
-
-            % compute the difference change in the TR relative to FR:
-            perm_score (j) = abs(permHi - permLo);
-
-            P_rand(j) = sum(perm_score > true_score)/j;
-
-            % create and maximize a figure if desn't exist yet:
-            if ~exist('WWW')
-                WWW = figure;
-                set(WWW,'units','normalized','outerposition',[0 0 1 1])
-            end
-
-            % plot the permuted data:
-            subplot(1,2,1)
-            plot(t, low_perm, t, high_perm)
-            title([languages(LANG) '  ' estimator])
-            ax = gca;
-            ax.FontSize = 14        
-
-            % display the patch:
-            S.Vertices = [t(window(1)) -2; t(window(1)) 2; t(window(end)) 2; t(window(end)) -2];
-            S.Faces = [1 2 3 4];
-            S.EdgeColor = 'none';
-            S.FaceAlpha = 0.25;
-            patch(S)
-
-            grid on
-            subplot(1,2,2)
-            plot(1:j, P_rand(1:j))
-            drawnow
-
-            % report progress:
-        end
-        % p_val(LANG) = P_rand(j);
-        % title(['lang:' num2str(LANG)...
-        %     '; p = ' num2str(P_rand(j))...
-        %     '; perm.: ' num2str(perm)...
-        %     '; quant: ' num2str(q1) '-' num2str(q2) ' '...
-        %     estimator])
-        counter
-        p_val(counter).estimator = estimator;
-        p_val(counter).P_rand = P_rand(j);
-        p_val(counter).lang = languages{LANG};
-        p_val(counter).quant = [num2str(q1), '_' num2str(q2)];
-        p_val(counter).true_score = true_score;
-        p_val(counter).times = [num2str(t(58)) '_' num2str(t(64))];
-        p_val(counter).peaks = peaks(LANG,:);
+    switch(LANG)
+        case 1
+        IDlow = REIDlow;
+        IDhigh = REIDhigh;
+        true_score = truHi_RE-truLo_RE;
+        case 2
+        IDlow = erIDlow;
+        IDhigh = erIDhigh;
+        true_score = truHi_er-truLo_er;
+        case 3
+        IDlow = allIDlow;
+        IDhigh = allIDhigh;
+        true_score = truHi_all-truLo_all;
     end
+
+    All = [IDlow, IDhigh]; % create a pile of all trial numbers in the conditions;
+
+    lenA = length(IDhigh);
+    lenB = length(IDlow);
+    P_rand = zeros(1, perm);
+    clear perm_score ID_perm IDlow_perm low_perm high_perm permLo permHi
+    counter = counter + 1;
+    for j = 1:perm
+
+        % take a random sample out of the pile:
+        IDhigh_perm = randsample(All,lenA, 'false');
+        % IDlow_perm = randsample(All,lenB, 'false');
+        IDlow_perm  = All(~ismember(All, IDhigh_perm));
+
+        % average trials within the appropriate conditions:
+        low_perm = mean(cat(1, h(IDlow_perm).erp), 1);
+        high_perm = mean(cat(1, h(IDhigh_perm).erp), 1);
+
+        % get the difference wave for the resampled conditions: 
+        permLo = t(find(low_perm==min(low_perm(window))));
+        permHi = t(find(high_perm==min(high_perm(window))));
+
+        % compute the difference change in the TR relative to FR:
+        perm_score (j) = abs(permHi - permLo);
+
+        P_rand(j) = sum(perm_score > true_score)/j;
+
+        subplot(1,2,1)
+        plot(t, low_perm, t, high_perm)
+        
+        display the p
+        S.Vertices = [t(Lb) -2; t(Lb) 2; t(Ub) 2; t(Ub) -2];
+        S.Faces = [1 2 3 4];
+        S.EdgeColor = 'none';
+        S.FaceAlpha = 0.25;
+        patch(S)
+        
+        grid on
+        subplot(1,2,2)
+        plot(1:j, P_rand(1:j))
+        drawnow
+
+
+        % report progress:
+    end
+    % p_val(LANG) = P_rand(j);
+    % title(['lang:' num2str(LANG)...
+    %     '; p = ' num2str(P_rand(j))...
+    %     '; perm.: ' num2str(perm)...
+    %     '; quant: ' num2str(q1) '-' num2str(q2) ' '...
+    %     estimator])
+    counter
+    p_val(counter).estimator = estimator;
+    p_val(counter).P_rand = P_rand(j);
+    p_val(counter).lang = languages{LANG};
+    p_val(counter).quant = [num2str(q1), '_' num2str(q2)];
+    p_val(counter).true_score = true_score;
+    p_val(counter).times = [num2str(t(58)) '_' num2str(t(64))];
+    p_val(counter).peaks = peaks(LANG,:);
+    end
+
 end
 disp('Done!')

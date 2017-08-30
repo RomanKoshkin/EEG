@@ -1,3 +1,5 @@
+% Chi-square test
+
 function p = MYchitest(x1, x2)
 edges = [-0.5:1:7];
 a = histogram(x1, edges);
