@@ -1,5 +1,7 @@
+% displays
+
 clf;
-newtimef(low, EEG.pnts, [-100 396], EEG.srate,... %ALLEEG(2).data(22,:,:)
+newtimef(low, EEG.pnts, [-100 496], EEG.srate,... %ALLEEG(2).data(22,:,:)
     'cycles', [1 0.5],...   % number of cycles (of the wavelet) per window
     'winsize',50,...        % small windows will not capture long waves
     'padratio', 4,...       % kind of increases resolution in the frequency domain
