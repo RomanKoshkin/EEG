@@ -48,3 +48,6 @@ This script computes how average WM load changes over time and creates barplots.
 latency.m
 This script performs a randomization test of equal latencies in the windows of interest. The null hypothesis is that the latencies are the same
 All the above scripts ran trouble-free under EEGlab v13.5.4b. We cannot guarantee that it would work with other versions of EEGlab.
+
+GA_SUPER.m
+Proof-of-concept algorithm for rejecting “bad” epochs. ![Alt text](https://cloud.mail.ru/public/2TnF/n6DhtdCm4)
