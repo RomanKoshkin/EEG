@@ -270,29 +270,3 @@ title(['P2 (' num2str([LB(3) UB(3)]) ' ms)'], 'FontSize', 14)
 subplot(1,4,4)
 topoplot(VV(4, 1,:).*-1*xx,chanlocs,'style','both','electrodes','labelpoint');
 title(['P3b (' num2str([LB(4) UB(4)]) ' ms)'], 'FontSize', 14)
-
-%% e-mail:
-% of course there is.
-% the generalized eignevaue problem arises from the task to maximize Rayleigh quotient 
-% Q = w'R_1w/w'R_2w aiming at finding the projection w which maximizes the power for 
-% one data while minimizing it for the other. The data are reduced to their
-% correlation matrices because of the power of w'X = w'XX'w = w'R_xw;
-% Now, you are set to maximize this ratio and one way to solve this is to 
-% work in the space where any direction w will give the same power 
-% for the dataset that is in the denominator. 
-% Then, in this space you simply need to find the direction that maximizes 
-% the power for the first dataset(numerator)
-% 
-% to do that
-% 1. Create a whiteninig transform(you can read about it leswhere) for the 
-% second data H = inv(sqrtm(R_2)) which is inverse matrix square root 
-% 2. take your data into this new space as 
-% y1 = Hx1 and y2 = Hx2;
-% 3. By contruction in this space the denominator of the Rayleigh quotient 
-% will always be the same regardless of w (as long as the w'w = norm(w) = 1) 
-% since w'Hxx'H'w = wHR_1H'w = w' I w = w'w = norm(w) = 1.  
-% So, all you are  left with is to find max direction for 
-% Ry1  = y1*y1' = HR_1H'  = inv(sqrtm(R_2))R_1inv(sqrtm(R_2)) 
-% which is done via eigenvaue decomp of this matrix.  
-% 
-% QED

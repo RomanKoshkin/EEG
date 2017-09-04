@@ -18,7 +18,7 @@ q1 = 0.10; % lower quantile
 q2 = 0.90; % upper quantile
 
 % select the method implementation:
-test = 1; % 1 - as in the paper, 0 - as you described in the email.
+test = 1; % 1 - as in the paper, 0 - as described in the email.
 
 % regularization parameter:
 % the smaller this parameter, the greater the fit (i.e. the difference

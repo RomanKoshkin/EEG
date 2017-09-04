@@ -1,10 +1,12 @@
-GRU_RAWset3_rec.set - restore from tablet.
+## Introduction
 
-## Scripts and Functions Contained in this Project
+This repository contains MATLAB scripts and links to data used as part of the EEG/ERP study to explore how WM load affects attention to task-irrelevant probe stimuli during simultaneous interpreting. The draft of the paper presenting the key findings is available at [bioRxiv.org](https://cloud.mail.ru/public/3Lon/PVvjRVfY4). Note that this repo contains only MATLAB scripts we used mainly for EEG dataset processing. For other scripts and datasets, refer to our other repository [here]().
+
+## Scripts and Functions Contained in this Repo
 
 ### NEW_GRAND_AVERAGE.m 
 
-This MATLAB script plots ERPs specific to three distinct levels of WM load: low, medium and high. Unlike the limited functionality of the script SUPER.m, this one allow one to easily manipulate different parameters. For example, set subject- and direction-specific boundaries. It also plots effect size heatmaps and interaction plots, as well as boxplots of subject- and direction-specific WM load distributions. Finally, it performs some exploratory statistical tests. The actual test, however, were performed in R.
+This MATLAB script plots ERPs specific to three distinct levels of WM load: low, medium and high. Unlike the limited functionality of the script SUPER.m, this one allow one to easily manipulate different parameters. For example, set subject- and direction-specific boundaries. It also plots effect size heatmaps and interaction plots, as well as boxplots of subject- and direction-specific WM load distributions. Finally, it performs some exploratory statistical tests. The actual test, however, were performed in R (the scripts are available [here]().
 
 ### SUPER.m
 
@@ -15,7 +17,7 @@ This MATLAB script wrapper for many of the EEG pre-processing routines. Specific
 -	changes event codes to match WM load estimates by calling the EVS_corr_SUPER.m function. In turn, EVS_corr_SUPER.m also linearly interpolates WM load values at probe onset latencies. Finally, uncommenting line 79 in EVS_corr_SUPER.m, you will call the plotinterp.m function that plots curves for interpolated and noninterpolated WM load against the time-coded source text transcript and its corresponding time-coded translation.
 -	epochs the continuous EEG data using the EPOCH_SUPER.m function.
 -	plots ERPs of by subject, direction of interpretation and WM load. Unlike the NEW_GRAND_AVERAGE.m function (see below), it does not compute subject- and direction-specific cutoffs. The cutoff values for every WM load estimator are preset in the params.mat file;
--	optionally runs a genetic algorithm (implemented from scratch in the function GA_super.m) to reject ?bad? epochs. This algorithm is just a proof of concept and was not used for actual data analysis.
+-	optionally runs a genetic algorithm (implemented from scratch in the function GA_super.m) to reject “bad” epochs. This algorithm is just a proof of concept and was not used for actual data analysis.
 -	calls grand_avg_SUPER.m to plot grand average ERPs corresponding to high and low WM load defined based on cutoffs set in the params.m file.
 
 ### EEG_event_corr1.m
@@ -62,7 +64,12 @@ This script performs a randomization test of equal latencies in the windows of i
 
 Proof-of-concept algorithm for rejecting “bad” epochs. ![Alt text](https://github.com/RomanKoshkin/EEG/blob/master/GA.png)
 
+### max_projection_fork1.m
+
+This script attempts to find the optimal spatial filter to maximize the difference between low and high WM load in the window of interest.
+
 All the above scripts ran trouble-free under EEGlab v13.5.4b. We cannot guarantee that it would work with other versions of EEGlab.
+
 
 ## Data
 
