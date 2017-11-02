@@ -6,7 +6,7 @@ This repository contains MATLAB scripts and links to the data used as part of ou
 
 ### NEW_GRAND_AVERAGE.m 
 
-This MATLAB script plots ERPs specific to three distinct levels of WM load: low, medium and high. Unlike the limited functionality of the script SUPER.m, this one allow one to easily manipulate different parameters. For example, set subject- and direction-specific boundaries. It also plots effect size heatmaps and interaction plots, as well as boxplots of subject- and direction-specific WM load distributions. Finally, it performs some exploratory statistical tests. The actual tests, however, were performed in R (the scripts are available [here](https://github.com/RomanKoshkin/R).
+This MATLAB script plots ERPs specific to three distinct levels of WM load: low, medium and high. Unlike the limited functionality of the script SUPER.m, this one allow one to easily manipulate different parameters. For example, set subject- and direction-specific boundaries. It also plots effect size heatmaps and interaction plots, as well as boxplots of subject- and direction-specific WM load distributions. Finally, it performs some exploratory statistical tests. The actual tests, however, were performed in R (the scripts are available [here](https://github.com/RomanKoshkin/R)).
 
 ### SUPER.m
 
