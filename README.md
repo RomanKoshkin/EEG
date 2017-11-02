@@ -62,7 +62,7 @@ This script performs a randomization test of equal latencies in the windows of i
 
 ### GA_SUPER.m
 
-Proof-of-concept algorithm for rejecting “bad” epochs. ![Alt text](https://github.com/RomanKoshkin/EEG/GA.png)
+Proof-of-concept algorithm for rejecting “bad” epochs. ![Alt text](https://github.com/RomanKoshkin/EEG/blob/master/GA.png)
 
 ### max_projection_fork1.m
 
