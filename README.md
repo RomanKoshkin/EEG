@@ -1,6 +1,6 @@
 ## Introduction
 
-This repository contains MATLAB scripts and links to the data used as part of our EEG/ERP study (Koshkin, Shtyrov & Ossadtchi, 2017) to explore how WM load affects attention to task-irrelevant probe stimuli during simultaneous interpreting. The draft of the paper presenting the key findings is available at [bioRxiv.org](https://cloud.mail.ru/public/3Lon/PVvjRVfY4). Note that this repo contains only MATLAB scripts we used mainly for EEG dataset processing. For other scripts and datasets, refer to our other repositories: [R scripts](https://github.com/RomanKoshkin/R), [VBA](https://github.com/RomanKoshkin/VBA) and [NLP-Python](https://github.com/RomanKoshkin/NLP-Python).
+This repository contains MATLAB scripts and links to the data used as part of our EEG/ERP study (Koshkin, Shtyrov & Ossadtchi, 2017) to explore how WM load affects attention to task-irrelevant probe stimuli during simultaneous interpreting. The draft of the paper presenting the key findings is available at [bioRxiv.org](https://doi.org/10.1101/212951). Note that this repo contains only MATLAB scripts we used mainly for EEG dataset processing. For other scripts and datasets, refer to our other repositories: [R scripts](https://github.com/RomanKoshkin/R), [VBA](https://github.com/RomanKoshkin/VBA) and [NLP-Python](https://github.com/RomanKoshkin/NLP-Python).
 
 ## Scripts and Functions Contained in this Repo
 
